@@ -4995,7 +4995,6 @@ input[type="button"].btn-block {
   .card-deck .card {
     -ms-flex: 1 0 0%;
     flex: 1 0 0%;
-    
     margin-bottom: 0;
     margin-left: 15px;
   }
