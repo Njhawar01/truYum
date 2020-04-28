@@ -6,22 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/bootstrap-1.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-1.css">
+    <link rel="stylesheet" href="../css/custom.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <title>truYum</title>
     <style>
-        h3{
-            margin-top: 10px;
-        }
-        .success
-        {
-            font-size: 15px;
-        }
+      .row
+      {
+        margin: 5px;
+        height: 20px;
+      }
+      .col, .col-8, .col-4, .col-10, .col-2
+      {
+        height: fit-content;
+        padding: 0em;
+      }
+      .rupee
+      {
+        color: rgb(192, 59, 59);
+        font-size: 15px;
+      }
+      .truck
+      {
+        color: darkblue; margin-right: 2px;
+      }
+      .info
+      {
+        font-size: 12px; margin: 0px;
+      }
+      #coffee
+      {
+        padding: 0.25em;
+      }
+      .card-body
+      {
+        padding: 10px;
+      }
+      .card
+      {
+          max-width: 300px;
+      }
+      .success
+      {
+        width: 100%; height: 40px; font-size: 15px; background-color: rgb(155, 212, 155); color: darkgreen;
+      }
     </style>
   </head>
   <body>
@@ -29,7 +61,7 @@
     <div class="d-block d-sm-none">
       <nav class="navbar navbar-dark red">
         <ul class="brand-name-1 nav navbar-nav navbar-left">
-              <li class="ml-1"><a href="index.html" id="a-1">truYum</a></li>
+              <li class="ml-1"><a href="../index.html" id="a-1">truYum</a></li>
         </ul>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-light navbar-toggler-icon justify-content-md-right"></span>
@@ -39,8 +71,8 @@
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="red p-4">
             <ul class="nav navbar-nav-1">
-              <li><a href="index.html"><i class="fas fa-bars"></i> Menu Items</a></li>
-                <li><a href="index.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+              <li><a href="../index.html"><i class="fas fa-bars"></i> Menu Items</a></li>
+                <li><a href="../index.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 <li><a href="https://njhawar01.github.io/Bootstrap-Assignment"><i class="fa fa-chevron-circle-left"></i> Main Menu</a></li>
               </ul> 
           </div>
@@ -58,16 +90,52 @@
             <li class="mr-1 ml-1"><a href="index.html" id="a-1">truYum</a></li>
            </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li class="mr-1"><a href="menu-item-list-customer.html" data-toggle="tooltip" data-placement="top" title="Menu"><i class="fas fa-bars"></i> Menu Items</a></li>
-            <li class="mr-1"><a href="index.html" data-toggle="tooltip" data-placement="top" title="Login Menu"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li class="mr-1"><a href="../menu-item-list-customer.html" data-toggle="tooltip" data-placement="top" title="Menu"><i class="fas fa-bars"></i> Menu Items</a></li>
+            <li class="mr-1"><a href="../index.html" data-toggle="tooltip" data-placement="top" title="Login Menu"><i class="fas fa-sign-in-alt"></i> Login</a></li>
             <li><a href="https://njhawar01.github.io/Bootstrap-Assignment" data-toggle="tooltip" data-placement="top" title="Main Menu"><i class="fa fa-chevron-circle-left"></i> Main Menu</a></li>
           </ul> 
       </div>  
     </nav>
     </div>
-    <div class="container">
-    <h3>Edit Menu Item</h3>
-    <span class="badge badge-success success">Menu item details saved successfully.</span>
+    <div class="navbar navbar-light justify-content-center" id="nav-2" style="margin-bottom: 24px;">
+      <form class="searchContainer">
+        <i class="fas fa-coffee fa-2x" id="coffee"></i>
+        <input class="searchBox" type="search" placeholder="Search food" aria-label="Search" id="search" onkeyup="myFunction()">
+          <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+      </form>
+    </div>
+    <div class="card-deck" id="myItems">
+      <div class="card">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80" alt="Sandwich">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-left">Sandwich</h5>
+            </div>
+            <div class="col text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>99</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Main Course</small></p>
+            </div>
+            <div class="col text-right">
+              <i class="fas fa-truck truck"></i><span class="badge badge-info info">Free</span>
+            </div>
+          </div>
+          <div class="row" style="height: 40px;">
+              <div class="col">
+              <span class="badge badge-success success">Item added Successfully.</span>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="item-1.html" class="btn btn-danger"><i class="fas fa-cart-plus"></i>Add to Cart</a>
+            </div>
+          </div>
+      </div>
+      </div>
     </div>
     <footer class="blockquote-footer">
         &copy;Nitesh Jhawar 2020
