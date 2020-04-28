@@ -68,16 +68,19 @@
           <div class="form-group col-md-12">
             <label for="Item-Name">Item Name</label>
             <input type="text" class="form-control" style="padding: 2px;" id="itemname" placeholder="Item Name">
-          </div>
+            <span class="badge badge-danger" id="item-error" style="font-size: 10px;"></span>
+        </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
             <label for="Price">Price</label>
             <input type="text" class="form-control" style="padding: 2px;" id="price" placeholder="Price">
+            <span class="badge badge-danger" id="price-error" style="font-size: 10px;"></span>
             </div>
             <div class="form-group col-md-3">
                 <label for="Date Of Launch">Date Of Launch</label>
                 <input type="text" class="form-control" id="dateOfLaunch" id="launch">
+                <span class="badge badge-danger" id="date-error" style="font-size: 10px;"></span>
             </div>
             <div class="form-group col-md-3">
                 <label for="category">category</label>
@@ -88,6 +91,7 @@
                     <option value="drinks">Drinks</option>
                     <option value="dessert">Dessert</option>
                 </select>
+                <span class="badge badge-danger" id="select-error" style="font-size: 10px;"></span>
             </div>
             <div class="form-group col-md-3">
                 <label for="active">Active</label><br>
@@ -99,6 +103,7 @@
                     <input type="radio" id="radio2" name="active" class="custom-control-input">
                     <label class="custom-control-label" for="radio2">No</label>
                   </div>
+                  <span class="badge badge-danger" id="radio-error" style="font-size: 10px;"></span>
             </div>
         </div>
             <div class="form-row">

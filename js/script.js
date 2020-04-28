@@ -23,31 +23,50 @@ function formsubmit()
     var price = document.getElementById("price").value;
     var radio = document.getElementsByName("active");
     var select = document.getElementById("category").value;
+    var date = document.getElementById("dateOfLaunch").value;
     var count=0;
     if(item=="")
     {
-        window.alert("Item name is required");
+        document.getElementById("item-error").innerHTML="Item name is required";
+        document.getElementById("itemname").focus();
         return false;
     }
     else if(item.length>200)
     {
-        window.alert("Item name cannot exceed 200 characters.");
+        document.getElementById("item-error").innerHTML="Item name cannot exceed 200 characters.";
+        document.getElementById("itemname").focus();
         return false;
     }
-    if(price=="")
+    else if(price=="")
     {
-        window.alert("Price is required");
+        document.getElementById("price-error").innerHTML="Price is required";
+        document.getElementById("item-error").innerHTML = "";
+        document.getElementById("price").focus();
         return false;
     }
     else if(isNaN(price))
     {
-        window.alert("Price has to be a number");
-    }
-    if(select=="")
-    {
-        window.alert("Select one category");
+        document.getElementById("price-error").innerHTML="Price has to be a number";
+        document.getElementById("item-error").innerHTML = "";
+        document.getElementById("price").focus();
         return false;
     }
+    else if(date=="")
+    {
+        document.getElementById("date-error").innerHTML="Choose a date";
+        document.getElementById("price-error").innerHTML = "";
+        document.getElementById("dateOfLaunch").focus();
+        return false;
+    }
+    else if(select=="")
+    {
+        document.getElementById("select-error").innerHTML="Select one category";
+        document.getElementById("date-error").innerHTML = "";
+        document.getElementById("category").focus();
+        return false;
+    }
+    else
+    {
     for(var i=0;i<radio.length;i++)
     {
         if(radio[i].checked)
@@ -57,11 +76,13 @@ function formsubmit()
     }
     if(count==0)
     {
-        window.alert("Active?")
+        document.getElementById("radio-error").innerHTML="Yes or no?";
+        document.getElementById("select-error").innerHTML = "";
         return false;
     }
     else
     {
         return true;
     }
+}
 }
