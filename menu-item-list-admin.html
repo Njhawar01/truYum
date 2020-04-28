@@ -15,7 +15,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <title>truYum</title>
     <style>
-      
+      .row
+      {
+        margin: 5px;
+        height: 20px;
+      }
+      .col, .col-8, .col-4, .col-10, .col-2
+      {
+        height: fit-content;
+        padding: 0em;
+      }
+      .rupee
+      {
+        color: rgb(192, 59, 59);
+        font-size: 15px;
+      }
+      .truck
+      {
+        color: darkblue; margin-right: 2px;
+      }
+      .info
+      {
+        font-size: 12px; margin: 0px;
+      }
+      #coffee
+      {
+        padding: 0.25em;
+      }
+      .card-body
+      {
+        padding: 10px;
+      }
     </style>
   </head>
   <body>
@@ -52,7 +82,7 @@
             <li class="mr-1 ml-1"><a href="index.html" id="a-1">truYum</a></li>
            </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li class="mr-1"><a href="menu-item-list-admin.html" data-toggle="tooltip" data-placement="top" title="Menu"><i class="fas fa-bars"></i> Menu Items</a></li>
+            <li class="mr-1"><a href="menu-item-list-customer.html" data-toggle="tooltip" data-placement="top" title="Menu"><i class="fas fa-bars"></i> Menu Items</a></li>
             <li class="mr-1"><a href="index.html" data-toggle="tooltip" data-placement="top" title="Login Menu"><i class="fas fa-sign-in-alt"></i> Login</a></li>
             <li><a href="https://njhawar01.github.io/Bootstrap-Assignment" data-toggle="tooltip" data-placement="top" title="Main Menu"><i class="fa fa-chevron-circle-left"></i> Main Menu</a></li>
           </ul> 
@@ -60,9 +90,8 @@
     </nav>
     </div>
     <div class="navbar navbar-light justify-content-center" id="nav-2" style="margin-bottom: 24px;">
-      
       <form class="searchContainer">
-        <i class="fas fa-coffee fa-2x" id="coffee" style="padding: 0.25em;"></i>
+        <i class="fas fa-coffee fa-2x" id="coffee"></i>
         <input class="searchBox" type="search" placeholder="Search food" aria-label="Search" id="search" onkeyup="myFunction()">
           <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
       </form>
@@ -71,90 +100,201 @@
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80" alt="Sandwich">
         <div class="card-body">
-          <h5 class="card-title">Sandwich</h5>
-          <p>Rs. 200 <small><s>Rs. 250</s> 20% </small><i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-left">Sandwich</h5>
+            </div>
+            <div class="col text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>99</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Main Course</small></p>
+            </div>
+            <div class="col text-right">
+              <i class="fas fa-truck truck"></i><span class="badge badge-info info">Free</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1080&q=80" alt="Burger">
         <div class="card-body">
-          <h5 class="card-title">Burger<span class="badge badge-success">4.4 <i class="material-icons" id="icon-size-4">grade</i></span></h5>
-          <p>Rs. 200 <small><s>Rs. 250</s> 20% </small><i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-left">Hamburger</h5>
+            </div>
+            <div class="col text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>129</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Main Course</small></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Pizza">
         <div class="card-body">
-          <h5 class="card-title">Pizza <span class="badge badge-success">4.4 <i class="material-icons" id="icon-size-4">grade</i></span></h5>
-          <p>Rs. 200 <small><s>Rs. 250</s> 20% </small><i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-left">Pizza</h5>
+            </div>
+            <div class="col text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>149</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Main Course</small></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Chocolate Milkshake">
         <div class="card-body">
-          <h5 class="card-title">Chocolate Milkshake <span class="badge badge-success">4.4 <i class="material-icons" id="icon-size-4">grade</i></span></h5>
-          <p>Rs. 200 <small><s>Rs. 250</s> 20% </small><i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col-10">
+              <h5 class="card-title text-left" style="font-size: 18px;">Chocolate Milkshake</h5>
+            </div>
+            <div class="col-2 text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>99</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Drinks</small></p>
+            </div>
+            <div class="col text-right">
+              <i class="fas fa-truck truck"></i><span class="badge badge-info info">Free</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1564355808539-22fda35bed7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1030&q=80" alt="Chocolate Brownie">
         <div class="card-body">
-          <h5 class="card-title">Chocolate Brownie <span class="badge badge-success">4.4 <i class="material-icons" id="icon-size-4">grade</i></span></h5>
-          <p>Rs. 200 <small><s>Rs. 250</s> 20% </small><i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col-10">
+              <h5 class="card-title text-left" style="font-size: 18px;">Chocolate Brownie</h5>
+            </div>
+            <div class="col-2 text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>69</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Desserts</small></p>
+            </div>
+            <div class="col text-right">
+              <i class="fas fa-truck truck"></i><span class="badge badge-info info">Free</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1526230427044-d092040d48dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="French Fries">
         <div class="card-body">
-          <h5 class="card-title">French Fries <span class="badge badge-success">4.4 <i class="material-icons" id="icon-size-4">grade</i></span></h5>
-          <p>Rs. 100<i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-left">French Fries</h5>
+            </div>
+            <div class="col text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>89</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Starters</small></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1562007908-69cf18a6da04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Apple Pie">
         <div class="card-body">
-          <h5 class="card-title">Apple Pie <span class="badge badge-success">4.4 <i class="material-icons" id="icon-size-4">grade</i></span></h5>
-          <p>Rs. 100<i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-left">Apple Pie</h5>
+            </div>
+            <div class="col text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>59</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Desserts</small></p>
+            </div>
+            <div class="col text-right">
+              <i class="fas fa-truck truck"></i><span class="badge badge-info info">Free</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Strawberry Shake">
         <div class="card-body">
-          <h5 class="card-title">Strawberry Shake <span class="badge badge-success">4.4 <i class="material-icons" id="icon-size-4">grade</i></span></h5>
-          <p>Rs. 100<i class="material-icons" id="icon-size-3">local_offer</i></p>
-          
-          <div style="text-align: right;">
-          <a href="#" class="btn btn-primary" style="text-align: right;"><i class="material-icons" id="icon-size-1">create</i>Edit</a>
+          <div class="row">
+            <div class="col-10">
+              <h5 class="card-title text-left" style="font-size: 18px;">Strawberry Milkshake</h5>
+            </div>
+            <div class="col-2 text-right">
+              <p class="rupee"><i class="fas fa-rupee-sign"></i>99</p>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col">
+          <p class="card-text"><small class="text-left text-muted">Drinks</small></p>
+            </div>
+            <div class="col text-right">
+              <i class="fas fa-truck truck"></i><span class="badge badge-info info">Free</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-right">
+              <a href="#" class="btn btn-danger"><i class="fas fa-pen mr-1"></i>Edit</a>
+            </div>
+          </div>
+      </div>
       </div>
     </div>
     <footer class="blockquote-footer">
