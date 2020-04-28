@@ -8,6 +8,7 @@ function myFunction() {
         title = cards[i].querySelector(".card-body h5.card-title");
         if (title.innerText.toUpperCase().indexOf(filter) > -1) {
             cards[i].style.display = "";
+            cards[i].style.width = "300px";
         } else {
             cards[i].style.display = "none";
         }
