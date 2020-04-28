@@ -16,3 +16,24 @@ function myFunction() {
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
+
+function formsubmit()
+{
+    var item = document.getElementById("itemname").value;
+    var price = document.getElementById("price").value;
+    if(item=="")
+    {
+        window.alert("Item name is required");
+        return false;
+    }
+    else if(item.length>200)
+    {
+        window.alert("Item name cannot exceed 200 characters.");
+        return false;
+    }
+    if(price=="")
+    {
+        window.alert("Price is required");
+        return false;
+    }
+}
