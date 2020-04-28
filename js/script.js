@@ -21,6 +21,9 @@ function formsubmit()
 {
     var item = document.getElementById("itemname").value;
     var price = document.getElementById("price").value;
+    var radio = document.getElementsByName("active");
+    var select = document.getElementById("category").value;
+    var count=0;
     if(item=="")
     {
         window.alert("Item name is required");
@@ -35,5 +38,30 @@ function formsubmit()
     {
         window.alert("Price is required");
         return false;
+    }
+    else if(isNaN(price))
+    {
+        window.alert("Price has to be a number");
+    }
+    if(select=="")
+    {
+        window.alert("Select one category");
+        return false;
+    }
+    for(var i=0;i<radio.length;i++)
+    {
+        if(radio[i].checked)
+        {
+            count++;
+        }
+    }
+    if(count==0)
+    {
+        window.alert("Active?")
+        return false;
+    }
+    else
+    {
+        return true;
     }
 }
