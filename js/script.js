@@ -38,18 +38,29 @@ function formsubmit()
     if(item=="")
     {
         document.getElementById("item-error").innerHTML="Item name is required";
+        document.getElementById("price-error").innerHTML = "";
+        document.getElementById("date-error").innerHTML = "";
+        document.getElementById("radio-error").innerHTML="";
+        document.getElementById("select-error").innerHTML = "";
         document.getElementById("itemname").focus();
         return false;
     }
     else if(item.length>200)
     {
         document.getElementById("item-error").innerHTML="Item name cannot exceed 200 characters.";
+        document.getElementById("price-error").innerHTML = "";
+        document.getElementById("date-error").innerHTML = "";
+        document.getElementById("radio-error").innerHTML="";
+        document.getElementById("select-error").innerHTML = "";
         document.getElementById("itemname").focus();
         return false;
     }
     else if(price=="")
     {
         document.getElementById("price-error").innerHTML="Price is required";
+        document.getElementById("date-error").innerHTML = "";
+        document.getElementById("radio-error").innerHTML="";
+        document.getElementById("select-error").innerHTML = "";
         document.getElementById("item-error").innerHTML = "";
         document.getElementById("price").focus();
         return false;
@@ -58,20 +69,29 @@ function formsubmit()
     {
         document.getElementById("price-error").innerHTML="Price has to be a number";
         document.getElementById("item-error").innerHTML = "";
+        document.getElementById("date-error").innerHTML = "";
+        document.getElementById("radio-error").innerHTML="";
+        document.getElementById("select-error").innerHTML = "";
         document.getElementById("price").focus();
         return false;
     }
     else if(date=="")
     {
         document.getElementById("date-error").innerHTML="Choose a date";
+        document.getElementById("item-error").innerHTML = "";
         document.getElementById("price-error").innerHTML = "";
+        document.getElementById("radio-error").innerHTML="";
+        document.getElementById("select-error").innerHTML = "";
         document.getElementById("dateOfLaunch").focus();
         return false;
     }
     else if(select=="")
     {
         document.getElementById("select-error").innerHTML="Select one category";
+        document.getElementById("item-error").innerHTML = "";
         document.getElementById("date-error").innerHTML = "";
+        document.getElementById("price-error").innerHTML = "";
+        document.getElementById("radio-error").innerHTML="";
         document.getElementById("category").focus();
         return false;
     }
@@ -87,7 +107,10 @@ function formsubmit()
     if(count==0)
     {
         document.getElementById("radio-error").innerHTML="Yes or no?";
+        document.getElementById("item-error").innerHTML = "";
         document.getElementById("select-error").innerHTML = "";
+        document.getElementById("price-error").innerHTML = "";
+        document.getElementById("date-error").innerHTML = "";
         return false;
     }
     else
