@@ -4,15 +4,24 @@ function myFunction() {
     filter = input.value.toUpperCase();
     cardContainer = document.getElementById("myItems");
     cards = cardContainer.getElementsByClassName("card");
+    if(filter=="")
+    {
+        location.reload();
+        return;
+    }
+    else
+    {
     for (i = 0; i < cards.length; i++) {
         title = cards[i].querySelector(".card-body h5.card-title");
         if (title.innerText.toUpperCase().indexOf(filter) > -1) {
             cards[i].style.display = "";
             cards[i].style.width = "300px";
+            cards[i].style.padding = "10px";
         } else {
             cards[i].style.display = "none";
         }
     }
+}
 };
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
